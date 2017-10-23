@@ -1,26 +1,47 @@
-var patients = require ('../models/patients');
 var express = require('express');
 var router = express.Router();
+var Patient = require('../models/patients');
 
-function getById(arr, id){
 
-    var result = arr.filter(function(i){return i.id == id;});
-    return result ? result [0] : null;
-}
-
+// find all patients
 router.searchAll = function(req,res){
-    res.json(patients);
+    Patient.find(function(err,patients){
+        if(err)
+            res.send(err);
+        else
+            res.json(patients);
+    });
 }
 
+//find specific patients by ID
 router.searchPatient = function(req,res) {
 
-    var patient = getById(patients, req.params.id);
-    if (patient != null)
-        res.json(patient);
-    else
-        res.json({message : 'Patient not found in system'});
+    Patient.find({"_id":req.params.id},function(err,patient){
+        if(err)
+            res.json({message : 'Patient not found in system'});
+        else
+            res.json(patient);
+    });
 }
 
+//adding new patient to patientsDB with relevant information
+router.addPatient = function(req,res) {
 
+    var patient = new Patient();
 
-module.exports = router;
+    patient.first= req.body.first;
+    patient.last= req.body.last;
+    patient.age= req.body.age;
+    patient.gender= req.body.gender;
+    patient.mobile= req.body.mobile;
+
+    console.log('Patient added:' + JSON.stringify(patient));
+
+    patient.save(function(err){
+        if(err)
+            res.send(err);
+
+        res.json({message:'Patient have been added'});
+    });
+
+}

@@ -27,7 +27,7 @@ app.use('/users', users);
 
 app.get('/patients',patients.searchAll);
 app.get('/patients/:id',patients.searchPatient);
-
+app.post('/patients',patients.addPatient);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
