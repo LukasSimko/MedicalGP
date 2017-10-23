@@ -45,3 +45,36 @@ router.addPatient = function(req,res) {
     });
 
 }
+// updating visit of patients by every visit by one
+router.updateVisit = function(req,res) {
+
+    Patient.findById(req.params.id,function(err,patient){
+        if(err)
+            res.send(err);
+        else {
+            patient.visit +=1;
+            patient.save(function(err){
+                if(err)
+                    res.send(err);
+                else
+                    res.json({message:'Patient visit update',data:patient});
+            });
+        }
+
+    });
+
+}
+// delete patient from database system by specific ID
+router.deletePatient = function(req, res) {
+
+    Patient.findByIdAndRemove(req.params.id,function(err){
+        if(err)
+            res.send(err);
+        else
+            res.json({message:'Patient deleted from database'});
+    });
+}
+
+
+
+module.exports = router;

@@ -6,7 +6,9 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var patients = require('./routes/patients');
+var patients = require('./routes/patients.js');
+var doctor = require('./routes/doctors');
+
 
 var app = express();
 
@@ -28,23 +30,31 @@ app.use('/users', users);
 app.get('/patients',patients.searchAll);
 app.get('/patients/:id',patients.searchPatient);
 app.post('/patients',patients.addPatient);
+app.put('/patients/:id/visit',patients.updateVisit);
+app.delete('/patients/:id',patients.deletePatient);
+
+app.get('/doctor',doctor.searchAll);
+app.get('/doctor/:fname', doctor.findOneByName);
+app.post('/doctor', doctor.addDoctor);
+app.put('/doctor/:id/cost', doctor.updateCost);
+app.delete('/doctor/:id', doctor.deleteDoctor);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
