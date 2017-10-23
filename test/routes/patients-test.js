@@ -7,5 +7,19 @@ chai.use(chaiHttp);
 var _ = require('lodash' );
 
 describe('patients', function (){
-    // TODO
+    describe('GET /patients', function () {
+        it('should return all the Patients in Collection', function(done) {
+            chai.request(server)
+                .get('/patients')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(4);
+                    done();
+                });
+        });
+    });
+
+
+
 });
