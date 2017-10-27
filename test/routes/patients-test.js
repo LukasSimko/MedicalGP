@@ -14,7 +14,7 @@ describe('patients', function (){
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(4);
+                    expect(res.body.length).to.equal(11);
                     done();
                 });
         });
@@ -31,6 +31,25 @@ describe('patients', function (){
                 });
         });
     });
-
+    describe('POST /patients', function () {
+        it('should return confirmation message and update patients datastore', function(done) {
+            var patients = {
+                first: 'Renata',
+                last: 'Simkova',
+                age: 45,
+                gender: 'female',
+                mobile: 353876278131,
+                visit:0
+            };
+            chai.request(server)
+                .post('/patients')
+                .send(patients)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Patient have been added') ;
+                    done();
+                });
+        });
+    });
 
 });
