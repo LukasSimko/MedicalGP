@@ -14,15 +14,15 @@ describe('patients', function (){
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(11);
+                    expect(res.body.length).to.equal(23);
                     done();
                 });
         });
     });
-    describe('GET /patients', function () {
+    describe('GET /patients/id', function () {
         it('should return the Patients in Collection', function(done) {
             chai.request(server)
-                .get('/patients/59fb7aed01cb542e54ddc330')
+                .get('/patients/59fe0b45020b2d3a44813bd6')
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
@@ -51,5 +51,31 @@ describe('patients', function (){
                 });
         });
     });
+
+
+
+
+    describe(' /DELETE/patients/:id', function ()  {
+        it('should delete a object from patients database with given id', function(done) {
+            beforeEach(function(){
+                while(patients.length > 0) {
+                    patients.pop();
+                }
+                patients.push(
+                    {id: '59fb7aed01cb542e54ddc330', first: 'Lukas',last: 'Simko', gender:'male', age:31 ,mobile: 353876278131, visit: 0}
+                );
+
+            });
+            chai.request(server)
+                .delete('/patients/59fb7aed01cb542e54ddc330')
+                .end(function(err, res){
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(1);
+                });
+            done();
+        });
+    });
+
 
 });
