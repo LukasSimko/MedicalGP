@@ -20,7 +20,7 @@ describe('patients', function (){
         });
     });
     describe('GET /patients/id', function () {
-        it('should return the Patients in Collection', function(done) {
+        it('should return the Patient in Collection', function(done) {
             chai.request(server)
                 .get('/patients/59fe0b45020b2d3a44813bd6')
                 .end(function(err, res) {
