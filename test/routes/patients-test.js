@@ -14,7 +14,7 @@ describe('patients', function (){
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(11);
+                    expect(res.body.length).to.equal(59);
                     done();
                 });
         });
@@ -22,7 +22,7 @@ describe('patients', function (){
     describe('GET /patients', function () {
         it('should return the Patients in Collection', function(done) {
             chai.request(server)
-                .get('/patients/59fb7aed01cb542e54ddc330')
+                .get('/patients/59fe0bcb9b8b7c1974632ad9')
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
@@ -50,6 +50,20 @@ describe('patients', function (){
                     done();
                 });
         });
+    });
+
+    describe('PUT /patients/:id/visit', function () {
+        it('should return all Patients with specified patient update visit by 1', function(done) {
+            chai.request(server)
+                .put('/patients/59ff7e0d2871a30de8d2ef18/visit')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Patient visit update');
+                   done();
+                });
+        });
+
+
     });
 
 });
