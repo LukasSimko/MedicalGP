@@ -6,6 +6,18 @@ var expect = chai.expect;
 chai.use(chaiHttp);
 var _ = require('lodash' );
 
+mongoose.connect('mongodb://localhost:27017/medicalgp');
+
+var db = mongoose.connection;
+
+db.on('error', function (err) {
+    console.log('connection error', err);
+});
+db.once('open', function () {
+    console.log('Successfully connected to database');
+});
+
+
 describe('doctor', function (){
     describe('GET /doctor', function () {
         it('should return all the Doctors in Collection', function(done) {

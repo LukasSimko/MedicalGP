@@ -57,7 +57,7 @@ router.updateVisit = function(req,res) {
                 if(err)
                     res.send(err);
                 else
-                    res.json({message:'Patient visit update',data:patient});
+                    res.json({message:'Patient visit update'});
             });
         }
 
