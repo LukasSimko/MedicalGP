@@ -55,6 +55,9 @@ describe('patients', function (){
 
 
 
+
+
+
     describe(' /DELETE/patients/:id', function ()  {
         it('should delete a object from patients database with given id', function(done) {
             beforeEach(function(){
