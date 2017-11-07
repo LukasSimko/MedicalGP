@@ -33,7 +33,25 @@ describe('doctor', function (){
         });
     });
 
-
+    describe('POST /doctor', function () {
+        it('should return confirmation message and update Doctor datastore', function(done) {
+            var patients = {
+                fname: 'Peter',
+                sname: 'Smith',
+                location: 'Cork',
+                contact: 353516278131,
+                cost:50
+            };
+            chai.request(server)
+                .post('/doctor')
+                .send(patients)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('New Doctor Added in system') ;
+                    done();
+                });
+        });
+    });
 
 
 
