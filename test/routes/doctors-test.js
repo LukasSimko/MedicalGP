@@ -14,7 +14,7 @@ describe('doctor', function (){
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(3);
+                    expect(res.body.length).to.equal(6);
                     done();
                 });
         });
@@ -53,6 +53,26 @@ describe('doctor', function (){
         });
     });
 
+    describe(' /DELETE/doctor/:id', function ()  {
+        it('should delete a object from patients database with given id', function(done) {
+            beforeEach(function(){
+                while(doctor.length > 0) {
+                    doctor.pop();
+                }
+                doctor.push(
+                    {id: '59fe476a533c0e24a08f8e67', fname: 'Lukas',sname: 'Simko', location:'Clonmel', contact: 35367544446, cost: 60}
+                );
 
+            });
+            chai.request(server)
+                .delete('/doctor/59fe476a533c0e24a08f8e67')
+                .end(function(err, res){
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(1);
+                });
+            done();
+        });
+    });
 
 });
