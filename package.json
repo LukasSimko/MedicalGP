@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "SET cross-env NODE_ENV=test PORT=4000 && mocha test/routes/patients-test.js"
+    "test": "cross-env NODE_ENV=test PORT=4000 && mocha test/routes/patients-test.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
+    "cross-env": "^5.1.1",
     "debug": "~2.6.9",
     "diff": "^3.4.0",
     "ejs": "~2.5.7",
