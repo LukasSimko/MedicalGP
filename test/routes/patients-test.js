@@ -1,26 +1,11 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../../bin/www');
-var mongoose = require('mongoose');
 var expect = chai.expect;
 var Patient = require ('../../models/patients');
 
 chai.use(chaiHttp);
 var _ = require('lodash' );
-
-
-mongoose.connect('mongodb://localhost:27017/medicalgp');
-
-var db = mongoose.connection;
-
-db.on('error', function (err) {
-    console.log('connection error', err);
-});
-db.once('open', function () {
-    console.log('Successfully connected to database');
-});
-
-
 
 
 describe('Patient', function (){
@@ -88,7 +73,7 @@ describe('Patient', function (){
         it('should return the Patient in Collection', function(done) {
             chai.request(server)
 
-                .get('/patients/59f6f0b99bd9dc7f544d7dac')
+                .get('/patients/59f6f0b99bd9dc7f544d7dac') //59f6f0b99bd9dc7f544d7dac
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
@@ -134,20 +119,12 @@ describe('Patient', function (){
 
     describe(' /DELETE/patients/:id', function ()  {
         it('should delete a object from patients database with given id', function(done) {
-            beforeEach(function(){
-                while(patients.length > 0) {
-                    patients.pop();
-                }
-                patients.push(
-                    {id: '59f6f0b99bd9dc7f555a7dac', first: 'Renata',last: 'Simkova', gender:'female', age:45 ,mobile: 353876278131, visit: 0}
-                );
-
-            });
-            chai.request(server)
+                 chai.request(server)
                 .delete('/patients/59f6f0b99bd9dc7f555a7dac')
                 .end(function(err, res){
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
+            // expect(res.body).to.have.property('message').equal('patient deleted')
                     expect(res.body.length).to.equal(1);
                 });
             done();

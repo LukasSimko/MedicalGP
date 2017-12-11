@@ -1,23 +1,11 @@
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../../bin/www');
-var Doctor = require ('../../models/doctors');
-var mongoose = require('mongoose');
 var expect = chai.expect;
+var Doctor = require ('../../models/doctors');
 
 chai.use(chaiHttp);
 var _ = require('lodash' );
-
-mongoose.connect('mongodb://localhost:27017/medicalgp');
-
-var db = mongoose.connection;
-
-db.on('error', function (err) {
-    console.log('connection error', err);
-});
-db.once('open', function () {
-    console.log('Successfully connected to database');
-});
 
 
 describe('doctor', function (){
@@ -72,6 +60,7 @@ describe('doctor', function (){
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
                     expect(res.body.length).to.equal(2);
+                    
                     done();
                 });
         });
@@ -92,7 +81,7 @@ describe('doctor', function (){
 
     describe('POST /doctor', function () {
         it('should return confirmation message and update Doctor datastore', function(done) {
-            var patients = {
+            var doctor = {
                 fname: 'Peter',
                 sname: 'Smith',
                 location: 'Cork',
@@ -101,7 +90,7 @@ describe('doctor', function (){
             };
             chai.request(server)
                 .post('/doctor')
-                .send(patients)
+                .send(doctor)
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.have.property('message').equal('New Doctor Added in system') ;
@@ -111,7 +100,7 @@ describe('doctor', function (){
     });
 
     describe('PUT /doctor/:id/cost', function () {
-        it('should return all Doctors with specified doctor update visit by 1', function(done) {
+        it('should return all Doctors with specified doctor update cost to 50', function(done) {
             chai.request(server)
                 .put('/doctor/59f6f0b99bd9dc7f555a7dac/cost')
                 .end(function(err, res) {
@@ -124,24 +113,16 @@ describe('doctor', function (){
 
     });
 
-    describe(' /DELETE/doctor/:id', function ()  {
+   describe(' /DELETE/doctor/:id', function ()  {
         it('should delete a object from doctor database with given id', function(done) {
-            beforeEach(function(){
-                while(doctor.length > 0) {
-                    doctor.pop();
-                }
-                doctor.push(
-                    {id: '59f6f0b99bd0000f555a7dac', fname: 'Peter',sname: 'Korfanta', location:'Cork', contact: 353876278131, cost: 50}
-                );
-
-            });
-            chai.request(server)
-                .delete('/doctor/59f6f0b99bd0000f555a7dac')
-                .end(function(err, res){
-                    expect(res).to.have.status(200);
-                    expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(1);
-                });
+        
+          chai.request(server)
+             .delete('/doctor/59f6f0b99bd0000f555a7dac')
+              .end(function(err, res){
+                 expect(res).to.have.status(200);
+                 expect(res.body).to.be.a('array');
+                 expect(res.body.length).to.equal(1);
+               });
             done();
         });
     });

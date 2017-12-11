@@ -4,7 +4,9 @@ var mongoose = require('mongoose');
 var Doctor = require('../models/doctors');
 
 
-mongoose.connect('mongodb://localhost:27017/medicalgp');
+
+mongoose.Promise = Promise;
+mongoose.connect('mongodb://localhost:27017/medicalgp',{useMongoClient : true});
 
 var db = mongoose.connection;
 
