@@ -82,40 +82,40 @@ describe('Patient', function (){
                 });
         });
     });
-    describe('POST /patients', function () {
-        it('should return confirmation message and update patients datastore', function(done) {
-            var patients = {
-                first: 'Eve',
-                last: 'Smith',
-                age: 24,
-                gender: 'female',
-                mobile: 353876278131,
-                visit:0
-            };
-            chai.request(server)
-                .post('/patients')
-                .send(patients)
-                .end(function(err, res) {
-                    expect(res).to.have.status(200);
-                    expect(res.body).to.have.property('message').equal('Patient have been added') ;
-                    done();
-                });
-        });
-    });
-
-    describe('PUT /patients/:id/visit', function () {
-        it('should return all Patients with specified patient update visit by 1', function(done) {
-            chai.request(server)
-                .put('/patients/59f6f0b99bd9dc7f544d7dac/visit')
-                .end(function(err, res) {
-                    expect(res).to.have.status(200);
-                    expect(res.body).to.have.property('message').equal('Patient visit update');
-                    done();
-                });
-        });
-
-
-    });
+    // describe('POST /patients', function () {
+    //     it('should return confirmation message and update patients datastore', function(done) {
+    //         var patients = {
+    //             first: 'Eve',
+    //             last: 'Smith',
+    //             age: 24,
+    //             gender: 'female',
+    //             mobile: 353876278131,
+    //             visit:0
+    //         };
+    //         chai.request(server)
+    //             .post('/patients')
+    //             .send(patients)
+    //             .end(function(err, res) {
+    //                 expect(res).to.have.status(200);
+    //                 expect(res.body).to.have.property('message').equal('Patient have been added') ;
+    //                 done();
+    //             });
+    //     });
+    // });
+    //
+    // describe('PUT /patients/:id/visit', function () {
+    //     it('should return all Patients with specified patient update visit by 1', function(done) {
+    //         chai.request(server)
+    //             .put('/patients/59f6f0b99bd9dc7f544d7dac/visit')
+    //             .end(function(err, res) {
+    //                 expect(res).to.have.status(200);
+    //                 expect(res.body).to.have.property('message').equal('Patient visit update');
+    //                 done();
+    //             });
+    //     });
+    //
+    //
+    // });
 
     describe(' /DELETE/patients/:id', function ()  {
         it('should delete a object from patients database with given id', function(done) {
