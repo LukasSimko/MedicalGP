@@ -15,7 +15,8 @@
     "build:watch": "webpack --watch",
     "test:watch": "npm run test -- --watch",
     "coverage": "set NODE_ENV=test PORT=4000 istanbul cover _mocha -- test/routes/patients-test.js",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls"
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "check-coverage": "istanbul check-coverage --statements 70 --branches 40 --functions 40 --lines 70"
   },
   "dependencies": {
     "angular": "^1.3.10",
