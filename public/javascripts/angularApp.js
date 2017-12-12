@@ -1,3 +1,4 @@
+
 var app = angular.module('DonationWebApp', ['ngRoute']);
 
 app.config(function($routeProvider) {
@@ -5,27 +6,27 @@ app.config(function($routeProvider) {
 
     // route for the home page
         .when('/', {
-            templateUrl : 'pages/home.ejs',
+            templateUrl : 'public/pages/home.ejs',
             controller  : 'mainController'
         })
 
         .when('/patients',{
-            templateUrl : 'pages/patient.ejs',
+            templateUrl : 'public/pages/patient.ejs',
             controller  : 'patientController'
         })
 
         .when('/registered',{
-            templateUrl : 'pages/allPatients.ejs',
+            templateUrl : 'public/pages/allPatients.ejs',
             controller  : 'allPatientsController'
         })
         // route for the about page
         .when('/about', {
-            templateUrl : 'pages/about.ejs',
+            templateUrl : 'public/pages/about.ejs',
             controller  : 'aboutController'
         })
 
         .when('/contact', {
-            templateUrl : 'pages/contact.ejs',
+            templateUrl : 'public/pages/contact.ejs',
             controller  : 'contactController'
         })
 
