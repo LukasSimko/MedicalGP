@@ -3,8 +3,8 @@ var chaiHttp = require('chai-http');
 var server = require('../../bin/www');
 var expect = chai.expect;
 var Patient = require ('../../models/patients');
-
 chai.use(chaiHttp);
+
 var _ = require('lodash' );
 
 
