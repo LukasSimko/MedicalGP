@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Patient = require('../models/patients');
 
-
+//coment
 // find all patients
 router.searchAll = function(req,res){
     Patient.find(function(err,patients){
