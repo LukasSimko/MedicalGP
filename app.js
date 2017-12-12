@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var patients = require('./routes/patients.js');
+var patients = require('./routes/patients');
 var doctor = require('./routes/doctors');
 
 
@@ -27,7 +27,7 @@ app.use('/users', users);
 
 app.get('/patients',patients.searchAll);
 app.get('/patients/:id',patients.searchPatient);
-app.post('/patients',patients.addPatient);
+app.post('/patients', patients.addPatient);
 app.put('/patients/:id/visit',patients.updateVisit);
 app.delete('/patients/:id',patients.deletePatient);
 

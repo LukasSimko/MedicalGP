@@ -7,9 +7,7 @@ var PatientSchema = new mongoose.Schema({
     last: String,
     age: Number,
     gender: String,
-    mobile: Number,
-    visit:{type:Number,default:0}
-});
+    mobile: Number});
 
 
 module.exports = mongoose.model('Patient',PatientSchema);
