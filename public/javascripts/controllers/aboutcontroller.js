@@ -1,7 +1,7 @@
-var app = angular.module('DonationWebApp');
 
-app.controller('aboutController', ['$scope', function($scope) {
+aboutController = function($scope) {
     // create a message to display in our view
-    $scope.message = 'Look, I\'m an About Page!';
-}
-]);
+    $scope.message = 'This is the about Page';
+};
+
+module.exports = aboutController;

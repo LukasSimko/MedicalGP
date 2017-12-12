@@ -1,10 +1,9 @@
-var app = angular.module('DonationWebApp');
 
 
-app.controller('allPatientsController', ['$scope',  '$http', function($scope,  $http) {
+
+allPatientsController = function($scope,  $http) {
     // create a message to display in our view
     $scope.message = 'List of Patients added!';
-
 
 
     findAll();
@@ -20,15 +19,15 @@ app.controller('allPatientsController', ['$scope',  '$http', function($scope,  $
             });
     };
 
-    $scope.delete = function(id) {
+    $scope.delete = function (id) {
         if (confirm("Are you sure you want to delete this Patient?")) {
             console.log('Deleting patient  : ' + id);
             $http.delete('/patients/' + id)
-                .success(function(data) {
+                .success(function (data) {
                     console.log(data);
                     findAll();
                 })
-                .error(function(data) {
+                .error(function (data) {
                     console.log('Error: ' + data);
                 });
         }
@@ -53,6 +52,7 @@ app.controller('allPatientsController', ['$scope',  '$http', function($scope,  $
             console.log('Error: ' + data);
         });
     }
+};
 
+module.exports = allPatientsController;
 
-}]);

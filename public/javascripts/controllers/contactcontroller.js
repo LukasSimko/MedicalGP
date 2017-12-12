@@ -1,7 +1,6 @@
-var app = angular.module('DonationWebApp');
 
-app.controller('contactController', ['$scope', function($scope) {
+contactController = function($scope) {
     // create a message to display in our view
     $scope.message = 'Enter conatct details here';
-}
-]);
+};
+module.exports = contactController;
