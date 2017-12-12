@@ -21,11 +21,17 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(express.static(path.join(__dirname, '')));
+
+
 if (prod) {
     app.use(express.static(path.join(__dirname, 'dist')));
 } else {
     app.use(express.static(path.join(__dirname, 'build')));
-}app.use("/public", express.static(__dirname + "/public"));  // NEW
+}
+
+app.use("/public", express.static(__dirname + "/public"));  // NEW
 
 app.use('/', index);
 app.use('/users', users);
