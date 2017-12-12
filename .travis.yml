@@ -1,3 +1,12 @@
 language: node_js
 node_js:
-  - stable
+ - stable
+branches:
+only:
+ - ROLL
+notifications:
+    email:
+      recipients:
+        - sompo74@gmail.com      # uae your own
+      on_success: never        # default: change
+      on_failure: always       # default: always

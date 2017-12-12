@@ -5,6 +5,7 @@
   "scripts": {
     "build": "webpack",
     "server": "nodemon bin/www",
+    "test": "set NODE_ENV=test PORT=4000 mocha test/routes/patients-test.js",
     "build:prod": "webpack --config webpack-prod.config.js",
     "build:dev": "webpack",
     "start": "npm-run-all test build:dev server",
