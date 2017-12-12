@@ -1,5 +1,7 @@
-
+require('angular');
+require('angular-route');
 var app = angular.module('DonationWebApp', ['ngRoute']);
+require('./controllers/index');
 
 app.config(function($routeProvider) {
     $routeProvider
