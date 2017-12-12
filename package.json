@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "test": "cross-env NODE_ENV=test mocha test/routes/patients-test.js",
     "server": "nodemon bin/www",
     "build:prod": "webpack --config webpack-prod.config.js",
     "build:dev": "webpack",
