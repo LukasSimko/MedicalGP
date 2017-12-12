@@ -52,12 +52,12 @@ router.updateVisit = function(req,res) {
         if(err)
             res.send(err);
         else {
-            patient.visit +=1;
+            patient.mobile = req.body.mobile;
             patient.save(function(err){
                 if(err)
                     res.send(err);
                 else
-                    res.json({message:'Patient visit update'});
+                    res.json({message:'Patient mobile update'});
             });
         }
 
