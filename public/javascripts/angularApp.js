@@ -6,7 +6,7 @@ require('../../node_modules/bootstrap/dist/css/bootstrap.css' );
 require('../../node_modules/font-awesome/css/font-awesome.css' );
 require('../stylesheets/style.css');
 
-app.config(function($routeProvider) {
+app.config(['$routeProvider',function($routeProvider) {
     $routeProvider
 
     // route for the home page
@@ -36,5 +36,5 @@ app.config(function($routeProvider) {
         })
 
 
-});
+}]);
 

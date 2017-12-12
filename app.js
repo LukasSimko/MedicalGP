@@ -8,6 +8,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var patients = require('./routes/patients');
 var doctor = require('./routes/doctors');
+var prod =  process.env.NODE_ENV === 'prod';
 
 
 var app = express();
@@ -20,8 +21,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'build')));
-app.use("/public", express.static(__dirname + "/public"));  // NEW
+if (prod) {
+    app.use(express.static(path.join(__dirname, 'dist')));
+} else {
+    app.use(express.static(path.join(__dirname, 'build')));
+}app.use("/public", express.static(__dirname + "/public"));  // NEW
 
 app.use('/', index);
 app.use('/users', users);
