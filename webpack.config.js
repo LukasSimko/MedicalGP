@@ -1,7 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+
+    plugins: [
+        new CleanWebpackPlugin(['build']),
+        new HtmlWebpackPlugin({ inject: 'head',
+            template: __dirname + "/public/index.tmpl.html"})
+    ],
     debug: true,
     devtool: 'source-map',
     noInfo: false,
