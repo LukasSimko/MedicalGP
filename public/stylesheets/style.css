@@ -83,6 +83,9 @@ main 					{
   color: #fff;
 }
 
+
+.glyphicon-thumbs-up { cursor:pointer }
+
 .front, .back {
   display: block;
   width: 100%;
