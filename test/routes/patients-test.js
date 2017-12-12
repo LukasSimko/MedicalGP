@@ -109,7 +109,7 @@ describe('Patient', function (){
                 .put('/patients/59f6f0b99bd9dc7f544d7dac/visit')
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
-                    expect(res.body).to.have.property('message').equal('Patient visit update');
+                    expect(res.body).to.have.property('message').equal('Patient mobile update');
                     done();
                 });
         });
