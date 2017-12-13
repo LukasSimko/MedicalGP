@@ -47,7 +47,7 @@ test.describe('Patients page', function() {
         // 2nd patient gender
         patients
             .then( function( elements ) {
-                return elements[1].findElement(By.name('gender'));
+                return elements[0].findElement(By.name('gender'));
             })
             .then(function(element) {
                 return element.getText();
@@ -58,7 +58,7 @@ test.describe('Patients page', function() {
         // 3rd patient first name
         patients
             .then( function( elements ) {
-                return elements[1].findElement(By.name('first'));
+                return elements[0].findElement(By.name('first'));
             })
             .then(function(element) {
                 return element.getText();
