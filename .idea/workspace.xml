@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ee227cb-a467-42cc-917a-3f01f7d0e83d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/acceptance/allPatientsPage-test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/acceptance/demo-test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/acceptance/homePage-test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/acceptance/patientPage-demo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/patientcontroller.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/patientcontroller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/about.ejs" afterPath="$PROJECT_DIR$/public/pages/about.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/allPatients.ejs" afterPath="$PROJECT_DIR$/public/pages/allPatients.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/home.ejs" afterPath="$PROJECT_DIR$/public/pages/home.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/patient.ejs" afterPath="$PROJECT_DIR$/public/pages/patient.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="$PROJECT_DIR$/views/index.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,6 +16,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="patient.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/pages/patient.ejs">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,7 +80,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homePage-test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homePage-test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/acceptance/homePage-test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
@@ -193,7 +191,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="952" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
@@ -1598,12 +1596,12 @@
       <workItem from="1513008518606" duration="7867000" />
       <workItem from="1513041333688" duration="3563000" />
       <workItem from="1513107574025" duration="6432000" />
-      <workItem from="1513118360589" duration="17320000" />
+      <workItem from="1513118360589" duration="20188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101383000" />
+    <option name="totallyTimeSpent" value="104251000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1615,7 +1613,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1471536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1783,14 +1781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1176">
           <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2012,6 +2002,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="56" column="56" lean-forward="false" selection-start-line="56" selection-start-column="56" selection-end-line="56" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding />
         </state>
       </provider>
