@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack",
     "server": "nodemon bin/www",
-    "test": "set NODE_ENV=test PORT=4000 mocha test/routes/patients-test.js",
+    "test": " cross-env NODE_ENV=test PORT=4000  mocha test/routes/patients-test.js",
     "build:prod": "webpack --config webpack-prod.config.js",
     "build:dev": "webpack",
     "start": "npm-run-all test build:dev server",
@@ -30,6 +30,7 @@
     "express": "~4.15.5",
     "font-awesome": "^4.7.0",
     "morgan": "~1.9.0",
+    "selenium-webdriver": "^3.6.0",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {

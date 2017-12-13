@@ -1,4 +1,4 @@
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" id= "registered">
     <h1>Patient in system</h1>
 
     <p>{{ message }}</p>
@@ -9,18 +9,19 @@
         <tbody ng-repeat="patient in patients | orderBy:'-first'">
         <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle
         "; >
-        <td>
+        <td name="first">
             <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>{{patient.first}}
-            {{patient.sname}}</span>
+            </span>
         </td>
-        <td>
-            <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>{{patient.last}}</span>
+        <td name="last">
+            <span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle";>{{patient.last}}
+            </span>
         </td>
-        <td>
+        <td name="age">
             <span class="glyphicon glyphicon-calendar"></span>
             {{patient.age}}&nbsp&nbsp&nbsp
         </td>
-        <td>
+        <td name="gender">
             <span class="glyphicon glyphicon-user"></span>
             {{patient.gender}}&nbsp
         </td>

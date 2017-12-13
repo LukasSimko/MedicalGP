@@ -7,7 +7,7 @@ patientController = function($scope, $http, $location) {
         console.log("form submitted");
         $http.post('/patients', regData).success(function(data) {
             $scope.patients = data;
-            $location.path('/')
+            $location.path('/registered')
             console.log(data);
         })
             .error(function(data) {

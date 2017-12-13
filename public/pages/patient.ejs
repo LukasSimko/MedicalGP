@@ -1,4 +1,4 @@
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" id = "patient">
     <h1>Patient Registration</h1>
 
     <p>{{ message }}</p>
@@ -11,27 +11,27 @@
                 <form ng-submit="rgstPatient(regData)">
 
                     <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>First Name</div>
-                    <div class="col-md-8" ><input class="form-control" type="text" name="fname" placeholder="Please the patient first name" ng-model="regData.first" required = "true"></div>
+                    <div class="col-md-8" ><input class="form-control" type="text" id ="fname" name="fname" placeholder="Please the patient first name" ng-model="regData.first" required = "true"></div>
                     <br><br><br>
 
                     <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Second Name</div>
-                    <div class="col-md-8" ><input class="form-control"  type="text" name="sname"  placeholder="Please the patients second name" ng-model="regData.last" required = "true"> </div>
+                    <div class="col-md-8" ><input class="form-control"  type="text" id ="sname" name="sname"  placeholder="Please the patients second name" ng-model="regData.last" required = "true"> </div>
                     <br><br><br>
 
                     <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Age</div>
-                    <div class="col-md-8" ><input class="form-control"  type="number" name="age"  placeholder="Please the patients age" ng-model="regData.age" required = "true"></div>
+                    <div class="col-md-8" ><input class="form-control"  type="number" id ="age" name="age"  placeholder="Please the patients age" ng-model="regData.age" required = "true"></div>
                     <br><br><br>
 
 
                     <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Gender</div>
-                    <div class="col-md-8" ><input class="form-control"  type="text" name="gender"  placeholder="Please enter the patients gender" ng-model="regData.gender" required = "true"></div>
+                    <div class="col-md-8" ><input class="form-control"  type="text" id ="gender" name="gender"  placeholder="Please enter the patients gender" ng-model="regData.gender" required = "true"></div>
                     <br><br><br>
 
 
                     <div class="col-md-4" ><span style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign="middle";>Contact Number</div>
-                    <div class="col-md-8" ><input class="form-control"  type="tel" name="mobile"  placeholder="Please enter the patients contact number" ng-model="regData.mobile" required = "true"></div>
+                    <div class="col-md-8" ><input class="form-control"  type="tel" id ="mobile" name="mobile"  placeholder="Please enter the patients contact number" ng-model="regData.mobile" required = "true"></div>
                     <br><br><br>
-                    <div class="col-md-2" ></div><div class="col-md-8" ><button class ="btn btn-primary" type = "submit">Register Patient </button></div>
+                    <div class="col-md-2" ></div><div class="col-md-8" ><button class ="btn btn-primary" id ="submit" type = "submit">Register Patient </button></div>
                 </form>
                 <br> <br>  <br>
 
