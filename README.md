@@ -10,6 +10,11 @@ The application pushes up to github,travis and passes to , I have the build set 
 Full acceptance testing.
 
 
+HAVE TO RUN TEST TWICE BECAUSE FOR TESTING IT TAKE PATIENT IN SYSTEM.
+RUN TWICE mocha test/acceptance
+
+thanks
+
 ## Environment.
 mongodb
 node v6.11.3
@@ -17,7 +22,7 @@ github
 travis
 
 the application have to be tested from ROLL branch because i had issue and because of that i have to roll back. All git log can bee seen wia git log
-. . . . . List any tools and technologies required before cloning the repo. e.g. Node V x.x, MongoDB, etc . . . . .
+
 
 ## Build automation.
 
